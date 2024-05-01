@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("./assets/Merriweather/Merriweather-Bold.ttf");
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+.my_container{
+  background-image: url("./assets/A.png");
+  background-size: cover;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my_container_1{
+  background-image: url("./assets/A.png");
+  /* background-image: url("../public/A.png"); */
+  background-size: cover;
+  position: fixed;
+  width: 1000px;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* top: 100px; */
+}
+
+.img_con {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  top: 150.5px;
+    border-radius:50% 50% 50% 50%;
+    width:350px;
+    height:350px;
+}
+
+.img_con_1 {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  top: 61.5px;
+    border-radius:50% 50% 50% 50%;
+    width:138px;
+    height:139px;
+}
+
+
+@media screen and (max-width: 500px) {
+  .my_container{
+    width: 330px;
+    height: 330px;
+  }
+  .img_con_1{
+    top: 50px;
+    width: 115px;
+    height: 115px;
+    left: 107.5px;
+  }
+}
