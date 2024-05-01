@@ -23,17 +23,6 @@ export default function AttendCard() {
             }
         }
     };
-    const handleDownloadPDF = () => {
-        const input = document.getElementById('image');
-        // Specify the id of the element you want to convert to PDF
-        html2canvas(input).then((canvas) => {
-            const imgData = canvas.toDataURL('image/png');
-            const pdf = new jsPDF();
-            pdf.addImage(imgData, 'PNG', 0, 0);
-            pdf.save('downloaded-file.pdf');
-            // Specify the name of the downloaded PDF file
-        });
-    };
     const handleDownloadImage = async () => {
         const element = document.getElementById('image'),
             canvas = await html2canvas(element),
@@ -49,10 +38,10 @@ export default function AttendCard() {
     };
 
     return (
-        <div>
+        <div className=''>
             <div className="text-center my-[30px] font-semibold px-[30px]  ">
-                <h1 className=" text-[28px] md:text-[38px] text-[#252525] tracking-[0.5px] mt-[40px] leading-[38px] md:leading-[45px] font-[Merriweather]">Get Ready for AI-Conclave: Claim your Live Swag!</h1>
-                <p className=" text-[17px] text-[#4c4c4c] tracking-[0.5px] m-auto mt-[30px] mb-[50px] w-[100%] sm:w-[80%]">Design and tailor your AI-Conclave participant image easily with our intuitive image creation tool, ensuring a distinctive representation of your attendance without the need for complex customization processes.</p>
+                <h1 className=" text-[28px] md:text-[45px] text-[#252525] tracking-[0.5px] mt-[40px] leading-[38px] md:leading-[45px] font-[Merriweather]">Digital Swag</h1>
+                <p className=" text-[19px] text-[#4c4c4c] tracking-[0.5px] m-auto mt-[30px] mb-[50px] w-[100%] sm:w-[80%]">Once you've signed up, you're all set for Ai Conclave - Ahmedabad 2024! Just add your name and picture to get your special badge. Then, download it and share it online using #AiConclaveAhmedabad2024 and tagging @gdsc.sou @silveroakuni @ieee_silveroakuni</p>
             </div>
             <div className="  m-auto w-[85%] flex flex-col gap-[20px] md:flex-row items-center gap-x-[15%] justify-center">
                 <div className=" absolute -z-50 opacity-0 ">
@@ -63,7 +52,7 @@ export default function AttendCard() {
                 <div className="my_container"  >
                     <img src="" className='img_con_1'  style={{ backgroundImage: `url(${previewSrc})` }}  alt="" />
                 </div>
-                <div className="flex flex-row md:flex-col justify-center gap-[10px] md:gap-[50px] items-center">
+                <div className="flex flex-row md:flex-col justify-center gap-[10px] md:gap-[30px] items-center">
                     <div className=" text-center flex justify-center items-center overflow-hidden relative h-[45px] md:h-[55px] cursor-pointer w-[150px] md:w-[220px] bg-[#0181FE] text-white text-[18px] md:text-[21px] rounded-[10px] ">
                         <p>
                             Upload Image
@@ -81,21 +70,14 @@ export default function AttendCard() {
                     <button
                         className="text-center flex justify-center items-center overflow-hidden relative h-[45px] md:h-[55px] cursor-pointer w-[170px] md:w-[220px] bg-[#0181FE] text-white text-[18px] md:text-[21px] rounded-[10px]"
                         onClick={() => {
-                            // const { exportComponentAsPNG } = await import(
-                            //     "react-component-export-image"
-                            // );
-                            // exportComponentAsPNG(componentRef);
-                            // renderPDF()
-
                             handleDownloadImage()
-                            // handlePrint(componentRef)
                         }}
-
                     >
                         Download as PNG
                     </button>
                 </div>
             </div>
+                <div className=' text-center mt-[50px] text-red-700'>* We respect your privacy and are not storing your pictures on our servers.</div>
         </div>
     )
 }
